@@ -12,10 +12,10 @@
     <nav class="navbar navbar-light justify-content-center">
         <ul class="nav">
             <li class="nav-item">
-                <a class="nav-link" href="#">Dashboard</a>
+                <a class="nav-link" href="{{ route('dashboard') }}">Dashboard</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Livre</a>
+                <a class="nav-link" href="{{ route('livre') }} ">Livre</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">Editeur</a>

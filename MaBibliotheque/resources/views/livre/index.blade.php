@@ -1,7 +1,8 @@
 @extends('layouts.app')
-
 @section('content')
 
-    <h1>Welcome</h1>
+    <h1>Livres</h1>
+
+    <h2>text routes</h2>
 
 @endsection

@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\livreController;
+use App\Http\Controllers\dashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +18,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+//Dashboard
+Route::get('/dashboard', [dashboardController::class, 'index'])->name('dashboard');
+
+//livres CRUD
+
+Route::get('/livre', [livreController::class, 'index'])->name('livre');
+

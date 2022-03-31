@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="38d314ad-fe72-4a07-823c-bb3048bf851e" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/MaBibliotheque/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/MaBibliotheque/public/css/app.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MaBibliotheque/resources/views/Livres/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MaBibliotheque/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/MaBibliotheque/resources/views/layouts/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MaBibliotheque/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/MaBibliotheque/resources/views/welcome.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MaBibliotheque/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/MaBibliotheque/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -178,7 +181,8 @@
       <updated>1648559639703</updated>
       <workItem from="1648559641101" duration="7289000" />
       <workItem from="1648705675361" duration="726000" />
-      <workItem from="1648706423561" duration="2033000" />
+      <workItem from="1648706423561" duration="3015000" />
+      <workItem from="1648733949712" duration="3480000" />
     </task>
     <servers />
   </component>
