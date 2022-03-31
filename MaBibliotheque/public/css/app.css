@@ -1,8 +1,32 @@
-nav ul li {
+body{
+    background-color: #E3F6F5;
+}
 
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 24px;
+}
+
+header nav{
+    background-color: #10375C;
 }
 
 h1{
-    font-size: 75px;
+    font-size: 55px;
 }
 
+
+
+.footer{
+    height : 60px;
+    background-color: #10375C;
+    text-align: center;
+    color: white;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding-top: 6px;
+    font-size: 24px;
+
+}

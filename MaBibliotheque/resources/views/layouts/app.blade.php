@@ -9,29 +9,44 @@
 <body>
 <header>
     <h1 class="text-center">MaBibliotheque</h1>
-    <nav class="navbar navbar-light bg-primary justify-content-center">
+    <nav class="navbar navbar-light justify-content-center">
         <ul class="nav">
             <li class="nav-item">
-                <a class="nav-link" href="#">Livres</a>
+                <a class="nav-link" href="#">Dashboard</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link link-dark" href="#">Link</a>
+                <a class="nav-link" href="#">Livre</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-black-50 font-weight-bold" href="#">Link</a>
+                <a class="nav-link" href="#">Editeur</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Disabled</a>
+                <a class="nav-link" href="#">Auteur</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Catégorie</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Emprunt</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Client</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Paramètre</a>
+            </li>
+
         </ul>
     </nav>
 </header>
-<h1>test css</h1>
-
+<div class = "content">
 @yield("content")
-
-
+</div>
     <!--footer-->
+
+    <div class="footer">
+        <p>Florent Scheibler</p>
+    </div>
     <script src="{{ asset('js/bootstrap.min.js') }}"></script>
 
 </body>
