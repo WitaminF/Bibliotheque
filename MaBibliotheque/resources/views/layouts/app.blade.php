@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Ma Bibliotheque Laravel</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="MaBibliotheque/public/css/app.css">
+    <link href="{{ asset('/css/app.css') }}" rel="stylesheet">
 </head>
 <body>
 <header>
@@ -27,6 +27,7 @@
     </nav>
 </header>
 <h1>test css</h1>
+
 @yield("content")
 
 
