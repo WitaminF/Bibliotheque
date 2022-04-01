@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\auteurController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\livreController;
 use App\Http\Controllers\dashboardController;
@@ -23,6 +24,8 @@ Route::get('/', function () {
 Route::get('/dashboard', [dashboardController::class, 'index'])->name('dashboard');
 
 //livres CRUD
-
 Route::get('/livre', [livreController::class, 'index'])->name('livre');
+
+//Auteurs CRUD
+Route::get('/auteur', [auteurController::class, 'index'])->name('auteur');
 
