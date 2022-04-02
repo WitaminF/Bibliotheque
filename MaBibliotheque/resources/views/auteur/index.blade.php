@@ -8,7 +8,7 @@
                     <h2 class="admin-heading">Auteur</h2>
                 </div>
                 <div class="offset-md-7 col-md-2">
-                    <a class="add-new" href="#">Ajouter</a>
+                    <a class="add-new" href="{{ route('auteur.creer') }}">Créer auteur</a>
                 </div>
             </div>
             <div class="row">

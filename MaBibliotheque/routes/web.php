@@ -28,4 +28,6 @@ Route::get('/livre', [livreController::class, 'index'])->name('livre');
 
 //Auteurs CRUD
 Route::get('/auteur', [auteurController::class, 'index'])->name('auteur');
+Route::get('/auteur/creer', [auteurController::class, 'create'])->name('auteur.creer');
+Route::post('/auteur/creer', [auteurController::class, 'store'])->name('auteur.ajouter');
 
