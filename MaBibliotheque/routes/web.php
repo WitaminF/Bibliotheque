@@ -28,6 +28,10 @@ Route::get('/livre', [livreController::class, 'index'])->name('livre');
 
 //Auteurs CRUD
 Route::get('/auteur', [auteurController::class, 'index'])->name('auteur');
-Route::get('/auteur/creer', [auteurController::class, 'create'])->name('auteur.creer');
-Route::post('/auteur/creer', [auteurController::class, 'store'])->name('auteur.ajouter');
+Route::get('/auteur/create', [auteurController::class, 'create'])->name('auteur.create');
+Route::post('/auteur/create', [auteurController::class, 'store'])->name('auteur.store');
+Route::get('/auteur/edit/{auteur}', [auteurController::class, 'edit'])->name('auteur.edit');
+Route::post('/auteur/update/{id}', [auteurController::class, 'update'])->name('auteur.update');
+Route::post('/auteur/delete/{id}', [auteurController::class, 'destroy'])->name('auteur.destroy');
+
 

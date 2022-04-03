@@ -15,7 +15,8 @@ class auteurController extends Controller
      */
     public function index()
     {
-        return view('auteur.index');
+        $auteurs = auteur::all();
+        return view('auteur.index', ['auteurs' => $auteurs] );
     }
 
     /**
@@ -25,7 +26,7 @@ class auteurController extends Controller
      */
     public function create()
     {
-        return view('auteur.creer');
+        return view('auteur.create');
     }
 
     /**
@@ -62,24 +63,38 @@ class auteurController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  auteur  $auteur
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(auteur $auteur)
     {
-        //
+        return view('auteur.edit', [
+            'auteur' => $auteur
+        ]);
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  auteur $auteur
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
-        //
+
+        $auteur = auteur::findOrFail($id);
+
+        $this->validate($request, [
+            'nom' => 'required',
+            'prenom' => 'required',
+        ]);
+
+        $input = $request->all();
+
+        $auteur->fill($input)->save();
+
+        return redirect()->route('auteur');
     }
 
     /**
@@ -90,6 +105,7 @@ class auteurController extends Controller
      */
     public function destroy($id)
     {
-        //
+        auteur::findorfail($id)->delete();
+        return redirect()->route('auteur');
     }
 }

@@ -13,7 +13,7 @@
             </div>
             <div class="row">
                 <div class="offset-md-3 col-md-6">
-                    <form class="yourform" action="{{ route('auteur.ajouter') }}" method="post" autocomplete="off">
+                    <form class="yourform" action="{{ route('auteur.store') }}" method="post" autocomplete="off">
                         @csrf
                         <div class="form-group">
                             <label>Nom de l'auteur</label>
