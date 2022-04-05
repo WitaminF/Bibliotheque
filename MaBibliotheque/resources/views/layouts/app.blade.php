@@ -19,7 +19,7 @@
                 <a class="nav-link" href="{{ route('livre') }} ">Livre</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Editeur</a>
+                <a class="nav-link" href="{{ route('editeur') }}">Editeur</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('auteur') }}">Auteur</a>

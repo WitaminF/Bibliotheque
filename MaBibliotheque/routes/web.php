@@ -42,3 +42,11 @@ Route::post('/categorie/create', [categorieController::class, 'store'])->name('c
 Route::get('/categorie/edit/{categorie}', [categorieController::class, 'edit'])->name('categorie.edit');
 Route::post('/categorie/update/{id}', [categorieController::class, 'update'])->name('categorie.update');
 Route::post('/categorie/delete/{id}', [categorieController::class, 'destroy'])->name('categorie.destroy');
+
+//Editeurs CRUD
+Route::get('/editeur', [categorieController::class, 'index'])->name('editeur');
+Route::get('/editeur/create', [categorieController::class, 'create'])->name('editeur.create');
+Route::post('/editeur/create', [categorieController::class, 'store'])->name('editeur.store');
+Route::get('/editeur/edit/{editeur}', [categorieController::class, 'edit'])->name('editeur.edit');
+Route::post('/editeur/update/{id}', [categorieController::class, 'update'])->name('editeur.update');
+Route::post('/editeur/delete/{id}', [categorieController::class, 'destroy'])->name('editeur.destroy');
