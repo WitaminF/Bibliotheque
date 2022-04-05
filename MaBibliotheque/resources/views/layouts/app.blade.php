@@ -25,7 +25,7 @@
                 <a class="nav-link" href="{{ route('auteur') }}">Auteur</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Catégorie</a>
+                <a class="nav-link" href="{{ route('categorie') }}">Catégorie</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">Emprunt</a>
