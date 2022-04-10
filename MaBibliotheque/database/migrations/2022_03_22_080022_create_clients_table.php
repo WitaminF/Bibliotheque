@@ -20,8 +20,9 @@ return new class extends Migration
             $table->string("email");
             $table->string("adresse");
             $table->integer("npa");
+            $table->string('ville');
             $table->date("date_naissance");
-            $table->string("genre");
+            $table->enum("genre", ['homme', 'femme']);
             $table->string("telephone");
             $table->timestamps();
         });

@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('emprunts', function (Blueprint $table) {
             $table->id();
-            $table->foreignId("client")->constrained()->onDelete("cascade");
-            $table->foreignId("exemplaire")->constrained();
+            $table->foreignId("client_id")->constrained()->onDelete("cascade");
+            $table->foreignId("livre_id")->constrained()->onDelete("cascade");
             $table->timestamp("date_emprunt");
             $table->timestamp("date_retour")->nullable();
             $table->string("statut_emprunt")->nullable();

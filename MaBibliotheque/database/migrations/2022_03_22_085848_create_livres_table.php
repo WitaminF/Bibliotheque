@@ -15,11 +15,13 @@ return new class extends Migration
     {
         Schema::create('livres', function (Blueprint $table) {
             $table->id();
-            $table->foreignId("categories")->constrained();
-            $table->foreignId("editeurs")->nullable()->constrained()->onDelete("cascade");
-            $table->foreignId("auteurs")->nullable()->constrained()->onDelete("cascade");
+            $table->foreignId("categorie_id")->constrained();
+            $table->foreignId("editeur_id")->nullable()->constrained()->onDelete("cascade");
+            $table->foreignId("auteur_id")->nullable()->constrained()->onDelete("cascade");
             $table->string("isbn");
             $table->string("nom");
+            $table->enum("etat", ["neuf", "usé", "très usé"])->default("neuf");
+            $table->string("langue");
             $table->timestamps();
         });
     }

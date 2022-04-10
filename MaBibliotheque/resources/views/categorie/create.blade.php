@@ -16,11 +16,9 @@
                     <form class="yourform" action="{{ route('categorie.store') }}" method="post" autocomplete="off">
                         @csrf
                         <div class="form-group">
-                            <label>Nom de l'auteur</label>
-                            <input type="text" class="form-control" placeholder="Nom auteur" name="nom" value="{{ old('nom') }}" required>
-
+                            <label>Nom catégorie</label>
+                            <input type="text" class="form-control" placeholder="Nom catégorie" name="nom" value="{{ old('nom') }}" required>
                         </div>
-                        <input type="submit" name="save" class="btn btn-danger" value="save" required>
                     </form>
                 </div>
             </div>

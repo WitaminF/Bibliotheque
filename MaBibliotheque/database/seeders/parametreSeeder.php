@@ -4,18 +4,17 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use App\Models\parametre;
 
-class DatabaseSeeder extends Seeder
+class parametreSeeder extends Seeder
 {
     /**
-     * Seed the application's database.
+     * Run the database seeds.
      *
      * @return void
      */
     public function run()
     {
-        $this->call([
-            parametreSeeder::class
-        ]);
+        parametre::factory()->count(1)->create();
     }
 }

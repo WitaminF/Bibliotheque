@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\client;
 
 class clientController extends Controller
 {
@@ -13,7 +14,8 @@ class clientController extends Controller
      */
     public function index()
     {
-        //
+        $clients = client::all();
+        return view('client.index', ['clients' => $clients] );
     }
 
     /**
@@ -23,7 +25,7 @@ class clientController extends Controller
      */
     public function create()
     {
-        //
+        return view('client.create');
     }
 
     /**
@@ -34,7 +36,22 @@ class clientController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'nom' => ['required'],
+            'prenom' => ['required'],
+            'email' => ['required'],
+            'adresse' => ['required'],
+            'npa' => ['required'],
+            'ville' => ['required'],
+            'date_naissance' => ['required'],
+            'genre' => ['required'],
+            'telephone' => ['required'],
+        ]);
+
+        $input = $request->all();
+        client::create($input);
+
+        return redirect('client');
     }
 
     /**
@@ -51,24 +68,44 @@ class clientController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  client $client
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(client $client)
     {
-        //
+        return view('client.edit', [
+            'client' => $client
+        ]);
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  client $client
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
-        //
+        $client = client::findOrFail($id);
+
+        $this->validate($request, [
+            'nom' => 'required',
+            'prenom' => 'required',
+            'email' => 'required',
+            'adresse' => 'required',
+            'npa' => 'required',
+            'ville' => 'required',
+            'date_naissance' => 'required',
+            'genre' => 'required',
+            'telephone' => 'required'
+        ]);
+
+        $input = $request->all();
+
+        $client->fill($input)->save();
+
+        return redirect()->route('client');
     }
 
     /**
@@ -79,6 +116,7 @@ class clientController extends Controller
      */
     public function destroy($id)
     {
-        //
+        client::findorfail($id)->delete();
+        return redirect()->route('client');
     }
 }

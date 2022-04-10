@@ -16,7 +16,13 @@
                 <a class="nav-link" href="{{ route('dashboard') }}">Dashboard</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{ route('livre') }} ">Livre</a>
+                <a class="nav-link" href="#">Emprunt</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('client') }}">Client</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href=" {{route('livre')}}" >Livre</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('editeur') }}">Editeur</a>
@@ -27,14 +33,9 @@
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('categorie') }}">Catégorie</a>
             </li>
+
             <li class="nav-item">
-                <a class="nav-link" href="#">Emprunt</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Client</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Paramètre</a>
+                <a class="nav-link" href="{{ route('parametre') }}">Paramètre</a>
             </li>
 
         </ul>

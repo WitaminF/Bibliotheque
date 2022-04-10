@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\editeur;
+use App\Models\parametre;
 
-class editeurController extends Controller
+class parametreController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,7 @@ class editeurController extends Controller
      */
     public function index()
     {
-        $editeurs = editeur::all();
-        return view('editeur.index', ['editeurs' => $editeurs] );
+        return view('parametre', ['data' => parametre::latest() ->first()]);
     }
 
     /**
@@ -25,7 +24,7 @@ class editeurController extends Controller
      */
     public function create()
     {
-        return view('editeur.create');
+        //
     }
 
     /**
@@ -36,14 +35,7 @@ class editeurController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'nom' => ['required']
-        ]);
-
-        $input = $request->all();
-        editeur::create($input);
-
-        return redirect('editeur');
+        //
     }
 
     /**
@@ -60,36 +52,28 @@ class editeurController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  editeur $editeur
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(editeur $editeur)
+    public function edit($id)
     {
-        return view('editeur.edit', [
-            'editeur' => $editeur
-        ]);
+        //
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  editeur $editeur
+     * @param  parametre $parametre
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        $editeur = editeur::findOrFail($id);
-
-        $this->validate($request, [
-            'nom' => 'required'
-        ]);
-
-        $input = $request->all();
-
-        $editeur->fill($input)->save();
-
-        return redirect()->route('editeur');
+        $parametre = parametre::latest() ->first();
+        $parametre->nb_jour_emprunt_max = $request->nb_jour_emprunt_max;
+        $parametre->nb_emprunt_max = $request->nb_emprunt_max;
+        $parametre ->save();
+        return redirect()->route('parametre');
     }
 
     /**
@@ -100,7 +84,6 @@ class editeurController extends Controller
      */
     public function destroy($id)
     {
-        editeur::findorfail($id)->delete();
-        return redirect()->route('editeur');
+        //
     }
 }
