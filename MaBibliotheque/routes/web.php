@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\livreController;
 use App\Http\Controllers\dashboardController;
 use App\Http\Controllers\parametreController;
+use App\Http\Controllers\empruntController;
 
 /*
 |--------------------------------------------------------------------------
@@ -72,3 +73,10 @@ Route::post('/editeur/delete/{id}', [editeurController::class, 'destroy'])->name
 //Parametre
 Route::get('/parametre', [parametreController::class, 'index']) ->name('parametre');
 Route::post('/parametre', [parametreController::class, 'update'])->name('parametre');
+
+Route::get('/emprunt', [empruntController::class, 'index'])->name('emprunt');
+Route::get('/emprunt/create', [empruntController::class, 'create'])->name('emprunt.create');
+Route::get('/emprunt/edit/{id}', [empruntController::class, 'edit'])->name('emprunt.edit');
+Route::post('/emprunt/update/{id}', [empruntController::class, 'update'])->name('emprunt.update');
+Route::post('/emprunt/delete/{id}', [empruntController::class, 'destroy'])->name('emprunt.destroy');
+Route::post('/emprunt/create', [empruntController::class, 'store'])->name('emprunt.store');

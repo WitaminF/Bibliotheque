@@ -24,6 +24,7 @@
                     <th>Nom</th>
                     <th>Etat</th>
                     <th>Langue</th>
+                    <th>Statut</th>
                     <th>Modifier</th>
                     <th>Supprimer</th>
                     </thead>
@@ -37,6 +38,13 @@
                             <td>{{ $livre->nom }}</td>
                             <td>{{ $livre->etat }}</td>
                             <td>{{ $livre->langue }}</td>
+                            <td>
+                                @if ($livre->statut == 'Y')
+                                    <span class='badge badge-success'>Disponnible</span>
+                                @else
+                                    <span class='badge badge-danger'>Emprunté</span>
+                                @endif
+                            </td>
                             <td class="edit">
                                 <a href="{{ route('livre.edit', $livre) }}" class="btn btn-success">Edit</a>
                             </td>

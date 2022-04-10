@@ -16,7 +16,7 @@
                 <a class="nav-link" href="{{ route('dashboard') }}">Dashboard</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Emprunt</a>
+                <a class="nav-link" href="{{ route('emprunt') }}">Emprunt</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('client') }}">Client</a>

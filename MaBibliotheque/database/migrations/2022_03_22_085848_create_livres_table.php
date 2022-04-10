@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string("nom");
             $table->enum("etat", ["neuf", "usé", "très usé"])->default("neuf");
             $table->string("langue");
+            $table->string('statut')->default('Y');
             $table->timestamps();
         });
     }
