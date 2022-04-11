@@ -8,10 +8,10 @@
                     <h2 class="admin-heading">Livres</h2>
                 </div>
                 <div class="offset-md-7 col-md-2">
-                    <a class="add-new" href="{{ route('livre.create') }}">Ajouter</a>
+                    <a class="add-new" href="{{ route('livre.create') }}">Créer un livre</a>
                 </div>
             </div>
-        <div class="row">
+        <div class="row" id="display-table">
             <div class="col-md-12">
                 <div class="message"></div>
                 <table class="content-table">

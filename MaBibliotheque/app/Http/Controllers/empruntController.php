@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use http\Message;
 use Illuminate\Http\Request;
 use App\Models\emprunt;
 use App\Models\auteur;
 use App\Models\livre;
 use App\Models\parametre;
 use App\Models\client;
+use Illuminate\Support\Facades\DB;
 
 class empruntController extends Controller
 {
@@ -45,21 +47,38 @@ class empruntController extends Controller
      */
     public function store(Request $request)
     {
-        $date_emprunt = date('Y-m-d');
-        $date_retour = date('Y-m-d', strtotime("+".(parametre::latest()->first()->nb_jour_emprunt_max). "days"));
+        //Requêtes sql:
+        //Select count(client_id) from emprunts where statut_emprunt ="N" AND client_id = 1;
+        $nb_emprunt_client = DB::table("emprunts")
+            ->where('statut_emprunt', '=', 'N' )
+            ->where('client_id', '=' , $request->client_id)
+            ->count();
 
-        $data = emprunt::create([
+        $nb_emprunt_max = parametre::latest()->first()->nb_emprunt_max;
+
+
+        if ($nb_emprunt_client <= $nb_emprunt_max){
+            $date_emprunt = date('Y-m-d');
+            $date_retour = date('Y-m-d', strtotime("+".(parametre::latest()->first()->nb_jour_emprunt_max). "days"));
+
+
+            $data = emprunt::create([
                 'client_id' => $request->client_id,
                 'livre_id' => $request->livre_id,
                 'date_emprunt' => $date_emprunt,
                 'date_retour' => $date_retour,
                 'statut_emprunt' => 'N'
             ]);
-        $data->save();
-        $livre = livre::find($request->livre_id);
-        $livre->statut = 'N';
-        $livre->save();
-        return redirect()->route('emprunt');
+            $data->save();
+            $livre = livre::find($request->livre_id);
+            $livre->statut = 'N';
+            $livre->save();
+            return redirect()->route('emprunt')->with('status', "Nouvel emprunt créé");
+            }
+            else {
+
+            return redirect('/emprunt/create')->with('status', "Le client possède déjà trop d'emprunts !");
+        }
     }
 
     /**
@@ -81,7 +100,16 @@ class empruntController extends Controller
      */
     public function edit($id)
     {
-        //
+        // calculate the total fine  (total days * fine per day)
+        $livre = emprunt::where('id',$id)->get()->first();
+        $premiere_date = date_create(date('Y-m-d'));
+        $deuxieme_date = date_create($livre->date_retour);
+        $diff = date_diff($premiere_date, $deuxieme_date);
+        $nb_jour_retard = (parametre::latest()->first()->nb_jour_emprunt_max - $diff->format('%a'));
+        return view('emprunt.edit', [
+            'livre' => $livre,
+            'jour_retard' => $nb_jour_retard,
+        ]);
     }
 
     /**

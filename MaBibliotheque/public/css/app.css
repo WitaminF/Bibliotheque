@@ -87,19 +87,27 @@ header nav{
 #admin-content .content-table{
     width: 100%;
     margin: 0 0 20px;
+
+
 }
 #admin-content .content-table thead{
     background: #444;
     color: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 1;
 }
 #admin-content .content-table th{
     text-align: center;
     text-transform: uppercase;
     border: 1px solid #000;
     padding: 10px;
+
+
 }
 #admin-content .content-table tbody tr:nth-child(odd){
     background: #e7e7e7;
+
 }
 #admin-content .content-table tbody tr:nth-child(even){
     background: transparent;
@@ -109,6 +117,14 @@ header nav{
     border: 1px solid #000;
     padding: 10px;
 }
+
+#display-table{
+    overflow: auto;
+    max-height: 400px;
+}
+
+
+
 
 
 

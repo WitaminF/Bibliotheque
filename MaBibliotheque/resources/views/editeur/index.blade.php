@@ -11,7 +11,7 @@
                     <a class="add-new" href="{{ route('editeur.create') }}">Créer editeur</a>
                 </div>
             </div>
-            <div class="row">
+            <div class="row" id="display-table">
                 <div class="col-md-12">
                     <table class="content-table">
                         <thead>

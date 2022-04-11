@@ -1,13 +1,18 @@
 @extends('layouts.app')
 @section('content')
+    @if (session('status'))
+        <div class="alert alert-danger">
+            {{ session('status') }}
+        </div>
+    @endif
     <div id="admin-content">
         <div class="container">
             <div class="row">
                 <div class="col-md-3">
-                    <h2 class="admin-heading">Add Book Issue</h2>
+                    <h2 class="admin-heading">Ajouter un emprunt</h2>
                 </div>
                 <div class="offset-md-7 col-md-2">
-                    <a class="add-new" href="{{ route('emprunt') }}">All Issue List</a>
+                    <a class="add-new" href="{{ route('emprunt') }}">Retour</a>
                 </div>
             </div>
             <div class="row">
@@ -16,9 +21,9 @@
                           autocomplete="off">
                         @csrf
                         <div class="form-group">
-                            <label>Student Name</label>
+                            <label>Nom du client</label>
                             <select class="form-control" name="client_id" required>
-                                <option value="">Select Name</option>
+                                <option value="">Selectionner un client</option>
                                 @foreach ($clients as $client)
                                     <option value='{{ $client->id }}'>{{ $client->nom }}</option>
                                 @endforeach
@@ -26,15 +31,15 @@
 
                         </div>
                         <div class="form-group">
-                            <label>Book Name</label>
+                            <label>Titre du livre</label>
                             <select class="form-control" name="livre_id" required>
-                                <option value="">Select Name</option>
+                                <option value="">Selectionner un livre</option>
                                 @foreach ($livres as $livre)
                                     <option value='{{ $livre->id }}'>{{ $livre->nom }}</option>
                                 @endforeach
                             </select>
                         </div>
-                        <input type="submit" name="save" class="btn btn-danger" value="save">
+                        <input type="submit" name="save" class="btn btn-danger" value="enregistrer">
                     </form>
                 </div>
             </div>

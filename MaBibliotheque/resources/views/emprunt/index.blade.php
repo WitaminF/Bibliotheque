@@ -1,16 +1,21 @@
 @extends('layouts.app')
 @section('content')
+    @if (session('status'))
+        <div class="alert alert-success text-center">
+            {{ session('status') }}
+        </div>
+    @endif
     <div id="admin-content">
         <div class="container">
             <div class="row">
                 <div class="col-md-3">
-                    <h2 class="admin-heading">All Book Issue</h2>
+                    <h2 class="admin-heading">Emprunts</h2>
                 </div>
                 <div class="offset-md-6 col-md-3">
-                    <a class="add-new" href="{{ route('emprunt.create') }}">Add Book Issue</a>
+                    <a class="add-new" href="{{ route('emprunt.create') }}">Nouvel emprunt</a>
                 </div>
             </div>
-            <div class="row">
+            <div class="row" id="display-table">
                 <div class="col-md-12">
                     <table class="content-table">
                         <thead>
@@ -23,7 +28,6 @@
                         <th>Date de retour</th>
                         <th>Status</th>
                         <th>Edit</th>
-                        <th>Delete</th>
                         </thead>
                         <tbody>
                         @forelse ($emprunts as $emprunt)
@@ -37,20 +41,13 @@
                                 <td>{{ $emprunt->date_retour->format('d M, Y') }}</td>
                                 <td>
                                     @if ($emprunt->statut_emprunt == 'Y')
-                                        <span class='badge badge-success'>Returned</span>
+                                        <span class='badge badge-success'>Retourné</span>
                                     @else
-                                        <span class='badge badge-danger'>Issued</span>
+                                        <span class='badge badge-danger'>Emprunté</span>
                                     @endif
                                 </td>
                                 <td class="edit">
-                                    <a href="{{ route('emprunt.edit', $emprunt->id) }}" class="btn btn-success">Edit</a>
-                                </td>
-                                <td class="delete">
-                                    <form action="{{ route('emprunt.destroy', $emprunt) }}" method="post"
-                                          class="form-hidden">
-                                        <button class="btn btn-danger">Delete</button>
-                                        @csrf
-                                    </form>
+                                    <a href="{{ route('emprunt.edit', $emprunt->id) }}" class="btn btn-success">Retour</a>
                                 </td>
                             </tr>
                         @empty
