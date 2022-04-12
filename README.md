@@ -85,7 +85,7 @@ Client + livre et confirmez
 Pour mettre fin à un emprunt, allez sur l'emprunt désirés puis sélectionner retour, dans la page suivante
 confirmez le retour de l'emprunt.
 
-##Paramètres
+## Paramètres
 Vous permet de modifier différents paramètres:
 - Nombre de jour d'emprunt max
 - Nombre d'emprunt max par client
