@@ -20,7 +20,7 @@
                             <input type="text" class="form-control" placeholder="Nom auteur" name="nom" value="{{ old('nom') }}" required>
 
                         </div>
-                        <input type="submit" name="save" class="btn btn-danger" value="save" required>
+                        <input type="submit" name="save" class="btn btn-danger" value="Sauvegarder" required>
                     </form>
                 </div>
             </div>

@@ -62,7 +62,7 @@
                             <input type="tel" class="form-control" placeholder="Téléphone du client" name="telephone" value="{{ old('telephone') }}" required>
                         </div>
 
-                        <input type="submit" name="save" class="btn btn-danger" value="save" required>
+                        <input type="submit" name="save" class="btn btn-danger" value="Sauvegarder" required>
                     </form>
                 </div>
             </div>

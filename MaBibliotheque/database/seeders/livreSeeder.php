@@ -2,11 +2,11 @@
 
 namespace Database\Seeders;
 
+use App\Models\livre;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use App\Models\parametre;
 
-class  parametreSeeder extends Seeder
+class livreSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -15,6 +15,8 @@ class  parametreSeeder extends Seeder
      */
     public function run()
     {
-        parametre::factory()->count(1)->create();
+        if (livre::count() == 0) {
+            livre::factory(50)->create();
+        }
     }
 }

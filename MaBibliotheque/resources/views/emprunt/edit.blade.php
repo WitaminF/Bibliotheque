@@ -46,7 +46,7 @@
                                     <td><b>{{ $livre->jour_retour->format('d M, Y') }}</b></td>s
                                 </tr>
                             @else
-                                @if (date('Y-m-d') > $livre->date_retour->format('d-m-Y') && !0)
+                                @if (date('Y-m-d') > $livre->date_retour->format('d-m-Y'))
                                     <tr>
                                         <td>Nombre de jour en retard</td>
                                         <td>{{ $jour_retard }}</td>

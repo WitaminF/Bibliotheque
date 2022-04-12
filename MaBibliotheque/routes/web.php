@@ -21,12 +21,10 @@ use App\Http\Controllers\empruntController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
 
 //Dashboard
-Route::get('/dashboard', [dashboardController::class, 'index'])->name('dashboard');
+Route::get('/', [dashboardController::class, 'index'])->name('dashboard');
 
 //livres CRUD
 Route::get('/livre', [livreController::class, 'index'])->name('livre');

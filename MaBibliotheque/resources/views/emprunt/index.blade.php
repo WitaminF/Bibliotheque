@@ -1,10 +1,6 @@
 @extends('layouts.app')
 @section('content')
-    @if (session('status'))
-        <div class="alert alert-success text-center">
-            {{ session('status') }}
-        </div>
-    @endif
+
     <div id="admin-content">
         <div class="container">
             <div class="row">
@@ -26,8 +22,8 @@
                         <th>Email</th>
                         <th>Jour emprunt</th>
                         <th>Date de retour</th>
-                        <th>Status</th>
-                        <th>Edit</th>
+                        <th>Statut</th>
+                        <th>Retour</th>
                         </thead>
                         <tbody>
                         @forelse ($emprunts as $emprunt)

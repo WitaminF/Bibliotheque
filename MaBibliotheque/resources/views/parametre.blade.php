@@ -20,7 +20,7 @@
                             <label>Nombre d'emprunt max</label>
                             <input type="number" class="form-control" name="nb_emprunt_max" value="{{ $data->nb_emprunt_max }}" required>
                         </div>
-                        <input type="submit" class="btn btn-danger" value="Update" required>
+                        <input type="submit" class="btn btn-danger" value="Sauvegarder" required>
                     </form>
                 </div>
             </div>

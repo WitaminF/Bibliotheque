@@ -12,7 +12,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-12">
+                <div class="col-md-12" id="display-table">
                     <table class="content-table">
                         <thead>
                         <th>No</th>

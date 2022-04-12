@@ -9,27 +9,6 @@
     <link href="{{ asset('/css/app.css') }}" rel="stylesheet">
 </head>
 <body>
-@if (session('status'))
-    <div class="modal" tabindex="-1" role="dialog" data-togle="modal" data-target="#exampleModal">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Modal title</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <p>{{ session('status') }}</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary">Save changes</button>
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-@endif
 <header>
     <h1 class="pageTitle">MaBibliotheque</h1>
     <nav class="navbar navbar-light justify-content-center">
@@ -57,7 +36,7 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="{{ route('parametre') }}">Paramètre</a>
+                <a class="nav-link" href="{{ route('parametre') }}">Paramètres</a>
             </li>
 
         </ul>
@@ -71,6 +50,7 @@
     <div class="footer">
         <p>Florent Scheibler - Ecole des Arches - 2022</p>
     </div>
+
 </body>
 </html>
 

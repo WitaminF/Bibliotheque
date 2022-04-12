@@ -2,11 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\auteur;
+use App\Models\categorie;
+use App\Models\client;
+use App\Models\editeur;
+use App\Models\emprunt;
+use App\Models\livre;
+use Illuminate\Http\Request;
 
-
-class auteurController extends Controller
+class dashboardController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +19,14 @@ class auteurController extends Controller
      */
     public function index()
     {
-        $auteurs = auteur::all();
-        return view('auteur.index', ['auteurs' => $auteurs] );
+        return view('dashboard', [
+            'auteurs' => auteur::count(),
+            'editeurs' => editeur::count(),
+            'categories' => categorie::count(),
+            'livres' => livre::count(),
+            'clients' => client::count(),
+            'emprunts' => emprunt::count(),
+        ]);
     }
 
     /**
@@ -26,7 +36,7 @@ class auteurController extends Controller
      */
     public function create()
     {
-        return view('auteur.create');
+        //
     }
 
     /**
@@ -37,16 +47,7 @@ class auteurController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'nom' => ['required'],
-            'prenom' => ['required']
-        ]);
-
-        $input = $request->all();
-        //auteur = model, pas oublier de rajouter use App\Models\auteur;
-        auteur::create($input);
-
-        return redirect('/auteur')->with('status', "Le client possède déjà trop d'emprunts !");
+        //
     }
 
     /**
@@ -63,38 +64,24 @@ class auteurController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  auteur  $auteur
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(auteur $auteur)
+    public function edit($id)
     {
-        return view('auteur.edit', [
-            'auteur' => $auteur
-        ]);
+        //
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  auteur $auteur
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
-
-        $auteur = auteur::findOrFail($id);
-
-        $this->validate($request, [
-            'nom' => 'required',
-            'prenom' => 'required',
-        ]);
-
-        $input = $request->all();
-
-        $auteur->fill($input)->save();
-
-        return redirect()->route('auteur');
+        //
     }
 
     /**
@@ -105,7 +92,6 @@ class auteurController extends Controller
      */
     public function destroy($id)
     {
-        auteur::findorfail($id)->delete();
-        return redirect()->route('auteur');
+        //
     }
 }

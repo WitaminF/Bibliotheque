@@ -25,7 +25,7 @@
                             <select class="form-control" name="client_id" required>
                                 <option value="">Selectionner un client</option>
                                 @foreach ($clients as $client)
-                                    <option value='{{ $client->id }}'>{{ $client->nom }}</option>
+                                    <option value='{{ $client->id }}'>{{ $client->nom }} {{ $client->prenom }}</option>
                                 @endforeach
                             </select>
 
@@ -39,7 +39,7 @@
                                 @endforeach
                             </select>
                         </div>
-                        <input type="submit" name="save" class="btn btn-danger" value="enregistrer">
+                        <input type="submit" name="save" class="btn btn-danger" value="Sauvegarder">
                     </form>
                 </div>
             </div>

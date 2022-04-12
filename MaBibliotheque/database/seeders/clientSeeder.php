@@ -4,9 +4,9 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use App\Models\parametre;
+use App\Models\client;
 
-class  parametreSeeder extends Seeder
+class clientSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -15,6 +15,8 @@ class  parametreSeeder extends Seeder
      */
     public function run()
     {
-        parametre::factory()->count(1)->create();
+        if (client::count() == 0) {
+            client::factory(50)->create();
+        }
     }
 }
