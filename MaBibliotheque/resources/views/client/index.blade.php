@@ -19,9 +19,6 @@
                         <th>Prénom</th>
                         <th>Nom</th>
                         <th>Email</th>
-                        <th>Adresse</th>
-                        <th>Npa</th>
-                        <th>Ville</th>
                         <th>Date de naissance</th>
                         <th>Genre</th>
                         <th>Tél</th>
@@ -35,9 +32,6 @@
                                 <td>{{ $client->nom }}</td>
                                 <td>{{ $client->prenom }}</td>
                                 <td>{{ $client->email }}</td>
-                                <td>{{ $client->adresse }}</td>
-                                <td>{{ $client->npa }}</td>
-                                <td>{{ $client->ville }}</td>
                                 <td>{{ $client->date_naissance }}</td>
                                 <td>{{ $client->genre }}</td>
                                 <td>{{ $client->telephone }}</td>

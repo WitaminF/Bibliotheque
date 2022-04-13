@@ -78,6 +78,7 @@ terminée, confirmez l'ajout d'un nouveau livre
 ## Clients
 Dans l'onglet client, cliquez sur ajouter un client, une fois les champs renseignés, confirmé l'ajout
 d'un nouveau client.
+Pour afficher l'adresse, le NPA et la ville du client, cliquer sur edit.
 
 ## Emprunts
 Vous pouvez maintenant ajouter un emprunt, dans l'onglet emprunt, ajouter un nouvel emprunt, renseigné les champs
